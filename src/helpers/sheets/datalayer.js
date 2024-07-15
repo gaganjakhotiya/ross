@@ -450,7 +450,8 @@ async function getTeamAndMemberWiseLeaves(startDate, endDate) {
   const memberMapByEmail = await memoFetchMembersMapByEmail();
   const bulkFetchResponse = await bulkFetchSheet(fetchRanges);
   const teamWiseDetails = activeTeams.map((teamObject, index) => {
-    const teamMemberEmailOrdered = bulkFetchResponse[2 * index].values[0];
+    const teamMemberEmailOrdered =
+      (bulkFetchResponse[2 * index].values || [])[0] || [];
     const teamMemberStatusOrdered =
       bulkFetchResponse[2 * index + 1].values || [];
     return {
@@ -567,7 +568,8 @@ async function getTeamAndMemberWiseDailyStatus(selectedDate) {
   const memberMapByEmail = await memoFetchMembersMapByEmail();
   const bulkFetchResponse = await bulkFetchSheet(fetchRanges);
   const teamWiseDetails = activeTeams.map((teamObject, index) => {
-    const teamMemberEmailOrdered = bulkFetchResponse[2 * index].values[0];
+    const teamMemberEmailOrdered =
+      (bulkFetchResponse[2 * index].values || [])[0] || [];
     const teamMemberStatusOrdered =
       (bulkFetchResponse[2 * index + 1].values || [])[0] || [];
     return {

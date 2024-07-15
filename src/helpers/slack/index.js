@@ -106,7 +106,7 @@ async function messageToCommand(messageContext) {
   }
 
   const cmdArgs = cleanedMessage.split(" ");
-  const command = cmdArgs[1].trim().toLowerCase();
+  const command = cmdArgs.length > 1 ? cmdArgs[1].trim().toLowerCase() : CMD_HELP;
   let validationResponse, handlerResponse;
 
   console.log("SWITCH", command);

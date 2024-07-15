@@ -89,7 +89,7 @@ function isAdminOriginMessage(messageContext) {
 }
 
 function throwToResponse(exception) {
-  return { status: 405, error: JSON.stringify(exception) };
+  return { status: 405, error: exception.stack };
 }
 
 function prepareCommandMessage(command, ...args) {
