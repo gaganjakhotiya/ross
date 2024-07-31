@@ -27,19 +27,19 @@ function isValidRossEnv() {
 }
 
 function isValidMemberHandle(handle) {
-  return typeof handle === "string" && /^<@U[A-Z0-9]{8,10}>$/.test(handle);
+  return typeof handle === "string" && /^<@[A-Z0-9]{8,11}>$/.test(handle);
 }
 
 function isValidMemberId(handle) {
-  return typeof handle === "string" && /^U[A-Z0-9]{8,10}$/.test(handle);
+  return typeof handle === "string" && /^[A-Z0-9]{8,11}$/.test(handle);
 }
 
 function isValidChannelHandle(handle) {
-  return typeof handle === "string" && /^<#C[A-Z0-9]{8,10}\|>$/.test(handle);
+  return typeof handle === "string" && /^<#[A-Z0-9]{8,11}\|>$/.test(handle);
 }
 
 function isValidChannelId(handle) {
-  return typeof handle === "string" && /^C[A-Z0-9]{8,10}$/.test(handle);
+  return typeof handle === "string" && /^[A-Z0-9]{8,11}$/.test(handle);
 }
 
 function isValidEmail(email) {
